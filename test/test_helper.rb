@@ -10,10 +10,14 @@ module SignInHelper
 end
 
 class ActiveSupport::TestCase
-   include SignInHelper
+  include SignInHelper
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def body(response)
+    JSON.parse(response.body)
+  end
 end

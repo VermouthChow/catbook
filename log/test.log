@@ -1,0 +1,979 @@
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:10:25.532587', '2020-02-06 17:10:25.532587', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:10:25.532587', '2020-02-06 17:10:25.532587', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:10:25.542822', '2020-02-06 17:10:25.542822', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:10:25.542822', '2020-02-06 17:10:25.542822', 298486374)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:10:25.549919', '2020-02-06 17:10:25.549919', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:10:25.549919', '2020-02-06 17:10:25.549919', 298486374)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:10:25.557248', '2020-02-06 17:10:25.557248', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:10:25.557248', '2020-02-06 17:10:25.557248', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:10:25.564841', '2020-02-06 17:10:25.564841', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:10:25.564841', '2020-02-06 17:10:25.564841', 298486374)[0m
+  [1m[35m (50.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:10:25 +0800
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:12:08.376947', '2020-02-06 17:12:08.376947', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:12:08.376947', '2020-02-06 17:12:08.376947', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:12:08.383961', '2020-02-06 17:12:08.383961', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:12:08.383961', '2020-02-06 17:12:08.383961', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:12:08.389563', '2020-02-06 17:12:08.389563', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:12:08.389563', '2020-02-06 17:12:08.389563', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:12:08.394949', '2020-02-06 17:12:08.394949', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:12:08.394949', '2020-02-06 17:12:08.394949', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:12:08.400338', '2020-02-06 17:12:08.400338', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:12:08.400338', '2020-02-06 17:12:08.400338', 298486374)[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:12:08 +0800
+Processing by BooksController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:12:52.851159', '2020-02-06 17:12:52.851159', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:12:52.851159', '2020-02-06 17:12:52.851159', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:12:52.858549', '2020-02-06 17:12:52.858549', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:12:52.858549', '2020-02-06 17:12:52.858549', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:12:52.863767', '2020-02-06 17:12:52.863767', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:12:52.863767', '2020-02-06 17:12:52.863767', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:12:52.869178', '2020-02-06 17:12:52.869178', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:12:52.869178', '2020-02-06 17:12:52.869178', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:12:52.875563', '2020-02-06 17:12:52.875563', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:12:52.875563', '2020-02-06 17:12:52.875563', 298486374)[0m
+  [1m[35m (20.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:12:52 +0800
+Processing by BooksController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:14:12.840795', '2020-02-06 17:14:12.840795', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:14:12.840795', '2020-02-06 17:14:12.840795', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:14:12.848525', '2020-02-06 17:14:12.848525', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:14:12.848525', '2020-02-06 17:14:12.848525', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:14:12.854230', '2020-02-06 17:14:12.854230', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:14:12.854230', '2020-02-06 17:14:12.854230', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:14:12.859919', '2020-02-06 17:14:12.859919', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:14:12.859919', '2020-02-06 17:14:12.859919', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:14:12.865424', '2020-02-06 17:14:12.865424', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:14:12.865424', '2020-02-06 17:14:12.865424', 298486374)[0m
+  [1m[35m (35.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:14:13 +0800
+Processing by BooksController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:18:08.171490', '2020-02-06 17:18:08.171490', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:18:08.171490', '2020-02-06 17:18:08.171490', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:18:08.178323', '2020-02-06 17:18:08.178323', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:18:08.178323', '2020-02-06 17:18:08.178323', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:18:08.183999', '2020-02-06 17:18:08.183999', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:18:08.183999', '2020-02-06 17:18:08.183999', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:18:08.189803', '2020-02-06 17:18:08.189803', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:18:08.189803', '2020-02-06 17:18:08.189803', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:18:08.195265', '2020-02-06 17:18:08.195265', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:18:08.195265', '2020-02-06 17:18:08.195265', 298486374)[0m
+  [1m[35m (530.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:18:08 +0800
+Processing by BooksController#index as HTML
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:21:10.771946', '2020-02-06 17:21:10.771946', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:21:10.771946', '2020-02-06 17:21:10.771946', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:21:10.778852', '2020-02-06 17:21:10.778852', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:21:10.778852', '2020-02-06 17:21:10.778852', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:21:10.784369', '2020-02-06 17:21:10.784369', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:21:10.784369', '2020-02-06 17:21:10.784369', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:21:10.789539', '2020-02-06 17:21:10.789539', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:21:10.789539', '2020-02-06 17:21:10.789539', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:21:10.795625', '2020-02-06 17:21:10.795625', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:21:10.795625', '2020-02-06 17:21:10.795625', 298486374)[0m
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:21:10 +0800
+Processing by BooksController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:22:40.661244', '2020-02-06 17:22:40.661244', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:22:40.661244', '2020-02-06 17:22:40.661244', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:22:40.668117', '2020-02-06 17:22:40.668117', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:22:40.668117', '2020-02-06 17:22:40.668117', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:22:40.673634', '2020-02-06 17:22:40.673634', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:22:40.673634', '2020-02-06 17:22:40.673634', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:22:40.679466', '2020-02-06 17:22:40.679466', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:22:40.679466', '2020-02-06 17:22:40.679466', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:22:40.685477', '2020-02-06 17:22:40.685477', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:22:40.685477', '2020-02-06 17:22:40.685477', 298486374)[0m
+  [1m[35m (315.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:22:41 +0800
+Processing by BooksController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:23:15.974651', '2020-02-06 17:23:15.974651', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:23:15.974651', '2020-02-06 17:23:15.974651', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:23:15.981660', '2020-02-06 17:23:15.981660', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:23:15.981660', '2020-02-06 17:23:15.981660', 298486374)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:23:15.987287', '2020-02-06 17:23:15.987287', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:23:15.987287', '2020-02-06 17:23:15.987287', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:23:15.993185', '2020-02-06 17:23:15.993185', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:23:15.993185', '2020-02-06 17:23:15.993185', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:23:15.999091', '2020-02-06 17:23:15.999091', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:23:15.999091', '2020-02-06 17:23:15.999091', 298486374)[0m
+  [1m[35m (746.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:23:16 +0800
+Processing by BooksController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:25:45.215563', '2020-02-06 17:25:45.215563', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:25:45.215563', '2020-02-06 17:25:45.215563', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:25:45.222785', '2020-02-06 17:25:45.222785', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:25:45.222785', '2020-02-06 17:25:45.222785', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:25:45.228401', '2020-02-06 17:25:45.228401', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:25:45.228401', '2020-02-06 17:25:45.228401', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:25:45.234014', '2020-02-06 17:25:45.234014', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:25:45.234014', '2020-02-06 17:25:45.234014', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:25:45.239929', '2020-02-06 17:25:45.239929', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:25:45.239929', '2020-02-06 17:25:45.239929', 298486374)[0m
+  [1m[35m (299.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:25:45 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.builder
+  Rendered books/index.json.builder (75.6ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:33:44.146172', '2020-02-06 17:33:44.146172', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:33:44.146172', '2020-02-06 17:33:44.146172', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:33:44.153065', '2020-02-06 17:33:44.153065', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:33:44.153065', '2020-02-06 17:33:44.153065', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:33:44.158512', '2020-02-06 17:33:44.158512', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:33:44.158512', '2020-02-06 17:33:44.158512', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:33:44.164622', '2020-02-06 17:33:44.164622', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:33:44.164622', '2020-02-06 17:33:44.164622', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:33:44.170275', '2020-02-06 17:33:44.170275', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:33:44.170275', '2020-02-06 17:33:44.170275', 298486374)[0m
+  [1m[35m (502.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:33:44 +0800
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:34:14.632908', '2020-02-06 17:34:14.632908', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:34:14.632908', '2020-02-06 17:34:14.632908', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:34:14.639882', '2020-02-06 17:34:14.639882', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:34:14.639882', '2020-02-06 17:34:14.639882', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:34:14.645281', '2020-02-06 17:34:14.645281', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:34:14.645281', '2020-02-06 17:34:14.645281', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:34:14.650957', '2020-02-06 17:34:14.650957', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:34:14.650957', '2020-02-06 17:34:14.650957', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:34:14.656738', '2020-02-06 17:34:14.656738', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:34:14.656738', '2020-02-06 17:34:14.656738', 298486374)[0m
+  [1m[35m (255.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/books" for 127.0.0.1 at 2020-02-07 01:34:15 +0800
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:37:06.047879', '2020-02-06 17:37:06.047879', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:37:06.047879', '2020-02-06 17:37:06.047879', 298486374)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:37:06.054870', '2020-02-06 17:37:06.054870', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:37:06.054870', '2020-02-06 17:37:06.054870', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:37:06.060787', '2020-02-06 17:37:06.060787', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:37:06.060787', '2020-02-06 17:37:06.060787', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:37:06.066843', '2020-02-06 17:37:06.066843', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:37:06.066843', '2020-02-06 17:37:06.066843', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:37:06.072503', '2020-02-06 17:37:06.072503', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:37:06.072503', '2020-02-06 17:37:06.072503', 298486374)[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 01:37:06 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.builder
+  Rendered books/index.json.builder (16.9ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:39:11.498565', '2020-02-06 17:39:11.498565', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:39:11.498565', '2020-02-06 17:39:11.498565', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:39:11.506186', '2020-02-06 17:39:11.506186', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:39:11.506186', '2020-02-06 17:39:11.506186', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:39:11.511480', '2020-02-06 17:39:11.511480', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:39:11.511480', '2020-02-06 17:39:11.511480', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:39:11.516752', '2020-02-06 17:39:11.516752', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:39:11.516752', '2020-02-06 17:39:11.516752', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:39:11.522339', '2020-02-06 17:39:11.522339', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:39:11.522339', '2020-02-06 17:39:11.522339', 298486374)[0m
+  [1m[35m (553.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 01:39:12 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  Rendered books/index.json.jbuilder (0.2ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:42:14.134070', '2020-02-06 17:42:14.134070', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:42:14.134070', '2020-02-06 17:42:14.134070', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:42:14.141049', '2020-02-06 17:42:14.141049', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:42:14.141049', '2020-02-06 17:42:14.141049', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:42:14.146660', '2020-02-06 17:42:14.146660', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:42:14.146660', '2020-02-06 17:42:14.146660', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:42:14.152434', '2020-02-06 17:42:14.152434', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:42:14.152434', '2020-02-06 17:42:14.152434', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:42:14.158307', '2020-02-06 17:42:14.158307', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:42:14.158307', '2020-02-06 17:42:14.158307', 298486374)[0m
+  [1m[35m (1141.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 01:42:15 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  Rendered books/index.json.jbuilder (0.2ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."updated_at" DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:43:33.823365', '2020-02-06 17:43:33.823365', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:43:33.823365', '2020-02-06 17:43:33.823365', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:43:33.830237', '2020-02-06 17:43:33.830237', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:43:33.830237', '2020-02-06 17:43:33.830237', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:43:33.835653', '2020-02-06 17:43:33.835653', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:43:33.835653', '2020-02-06 17:43:33.835653', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:43:33.841195', '2020-02-06 17:43:33.841195', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:43:33.841195', '2020-02-06 17:43:33.841195', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:43:33.847487', '2020-02-06 17:43:33.847487', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:43:33.847487', '2020-02-06 17:43:33.847487', 298486374)[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 01:43:33 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  Rendered books/index.json.jbuilder (0.2ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:43:56.711690', '2020-02-06 17:43:56.711690', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:43:56.711690', '2020-02-06 17:43:56.711690', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:43:56.718750', '2020-02-06 17:43:56.718750', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:43:56.718750', '2020-02-06 17:43:56.718750', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:43:56.724217', '2020-02-06 17:43:56.724217', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:43:56.724217', '2020-02-06 17:43:56.724217', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:43:56.729983', '2020-02-06 17:43:56.729983', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:43:56.729983', '2020-02-06 17:43:56.729983', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:43:56.735781', '2020-02-06 17:43:56.735781', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:43:56.735781', '2020-02-06 17:43:56.735781', 298486374)[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 01:43:56 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  Rendered books/index.json.jbuilder (0.3ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:44:25.035179', '2020-02-06 17:44:25.035179', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:44:25.035179', '2020-02-06 17:44:25.035179', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:44:25.042018', '2020-02-06 17:44:25.042018', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:44:25.042018', '2020-02-06 17:44:25.042018', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:44:25.047557', '2020-02-06 17:44:25.047557', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:44:25.047557', '2020-02-06 17:44:25.047557', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:44:25.053456', '2020-02-06 17:44:25.053456', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:44:25.053456', '2020-02-06 17:44:25.053456', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:44:25.059209', '2020-02-06 17:44:25.059209', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:44:25.059209', '2020-02-06 17:44:25.059209', 298486374)[0m
+  [1m[35m (34.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 01:44:30 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  Rendered books/index.json.jbuilder (0.2ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2020-02-07 01:44:44 +0800
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 01:44:49 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  Rendered books/index.json.jbuilder (0.1ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:45:20.711348', '2020-02-06 17:45:20.711348', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:45:20.711348', '2020-02-06 17:45:20.711348', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 17:45:20.718274', '2020-02-06 17:45:20.718274', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 17:45:20.718274', '2020-02-06 17:45:20.718274', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:45:20.723735', '2020-02-06 17:45:20.723735', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 17:45:20.723735', '2020-02-06 17:45:20.723735', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:45:20.729468', '2020-02-06 17:45:20.729468', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 17:45:20.729468', '2020-02-06 17:45:20.729468', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:45:20.735430', '2020-02-06 17:45:20.735430', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 17:45:20.735430', '2020-02-06 17:45:20.735430', 298486374)[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 01:45:23 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  Rendered books/index.json.jbuilder (0.2ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:09:21.787431', '2020-02-06 18:09:21.787431', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:09:21.787431', '2020-02-06 18:09:21.787431', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:09:21.794530', '2020-02-06 18:09:21.794530', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:09:21.794530', '2020-02-06 18:09:21.794530', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:09:21.799939', '2020-02-06 18:09:21.799939', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:09:21.799939', '2020-02-06 18:09:21.799939', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:09:21.805799', '2020-02-06 18:09:21.805799', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:09:21.805799', '2020-02-06 18:09:21.805799', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:09:21.811390', '2020-02-06 18:09:21.811390', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:09:21.811390', '2020-02-06 18:09:21.811390', 298486374)[0m
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:09:21 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.6ms)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:09:34.743133', '2020-02-06 18:09:34.743133', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:09:34.743133', '2020-02-06 18:09:34.743133', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:09:34.750578', '2020-02-06 18:09:34.750578', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:09:34.750578', '2020-02-06 18:09:34.750578', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:09:34.756061', '2020-02-06 18:09:34.756061', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:09:34.756061', '2020-02-06 18:09:34.756061', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:09:34.761606', '2020-02-06 18:09:34.761606', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:09:34.761606', '2020-02-06 18:09:34.761606', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:09:34.768243', '2020-02-06 18:09:34.768243', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:09:34.768243', '2020-02-06 18:09:34.768243', 298486374)[0m
+  [1m[35m (841.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:09:35 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.6ms)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:14:09.457717', '2020-02-06 18:14:09.457717', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:14:09.457717', '2020-02-06 18:14:09.457717', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:14:09.465549', '2020-02-06 18:14:09.465549', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:14:09.465549', '2020-02-06 18:14:09.465549', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:14:09.471612', '2020-02-06 18:14:09.471612', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:14:09.471612', '2020-02-06 18:14:09.471612', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:14:09.477239', '2020-02-06 18:14:09.477239', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:14:09.477239', '2020-02-06 18:14:09.477239', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:14:09.483588', '2020-02-06 18:14:09.483588', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:14:09.483588', '2020-02-06 18:14:09.483588', 298486374)[0m
+  [1m[35m (123.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:14:09 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (4.0ms)
+Completed 200 OK in 18824ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:14:58.220725', '2020-02-06 18:14:58.220725', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:14:58.220725', '2020-02-06 18:14:58.220725', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:14:58.227901', '2020-02-06 18:14:58.227901', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:14:58.227901', '2020-02-06 18:14:58.227901', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:14:58.233323', '2020-02-06 18:14:58.233323', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:14:58.233323', '2020-02-06 18:14:58.233323', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:14:58.239173', '2020-02-06 18:14:58.239173', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:14:58.239173', '2020-02-06 18:14:58.239173', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:14:58.245303', '2020-02-06 18:14:58.245303', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:14:58.245303', '2020-02-06 18:14:58.245303', 298486374)[0m
+  [1m[35m (239.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:14:58 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.5ms)
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:30:55.764356', '2020-02-06 18:30:55.764356', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:30:55.764356', '2020-02-06 18:30:55.764356', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:30:55.771315', '2020-02-06 18:30:55.771315', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:30:55.771315', '2020-02-06 18:30:55.771315', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:30:55.776796', '2020-02-06 18:30:55.776796', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:30:55.776796', '2020-02-06 18:30:55.776796', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:30:55.781930', '2020-02-06 18:30:55.781930', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:30:55.781930', '2020-02-06 18:30:55.781930', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:30:55.788232', '2020-02-06 18:30:55.788232', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:30:55.788232', '2020-02-06 18:30:55.788232', 298486374)[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:30:55 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.7ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:32:14.812851', '2020-02-06 18:32:14.812851', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:32:14.812851', '2020-02-06 18:32:14.812851', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:32:14.820251', '2020-02-06 18:32:14.820251', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:32:14.820251', '2020-02-06 18:32:14.820251', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:32:14.825733', '2020-02-06 18:32:14.825733', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:32:14.825733', '2020-02-06 18:32:14.825733', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:32:14.831773', '2020-02-06 18:32:14.831773', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:32:14.831773', '2020-02-06 18:32:14.831773', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:32:14.837532', '2020-02-06 18:32:14.837532', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:32:14.837532', '2020-02-06 18:32:14.837532', 298486374)[0m
+  [1m[35m (37.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:32:14 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.9ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:33:21.947537', '2020-02-06 18:33:21.947537', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:33:21.947537', '2020-02-06 18:33:21.947537', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:33:21.954404', '2020-02-06 18:33:21.954404', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:33:21.954404', '2020-02-06 18:33:21.954404', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:33:21.959912', '2020-02-06 18:33:21.959912', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:33:21.959912', '2020-02-06 18:33:21.959912', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:33:21.966131', '2020-02-06 18:33:21.966131', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:33:21.966131', '2020-02-06 18:33:21.966131', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:33:21.972241', '2020-02-06 18:33:21.972241', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:33:21.972241', '2020-02-06 18:33:21.972241', 298486374)[0m
+  [1m[35m (397.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:33:22 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (7651.1ms)
+Completed 200 OK in 7658ms (Views: 7652.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:34:28.449375', '2020-02-06 18:34:28.449375', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:34:28.449375', '2020-02-06 18:34:28.449375', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:34:28.457228', '2020-02-06 18:34:28.457228', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:34:28.457228', '2020-02-06 18:34:28.457228', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:34:28.463073', '2020-02-06 18:34:28.463073', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:34:28.463073', '2020-02-06 18:34:28.463073', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:34:28.468533', '2020-02-06 18:34:28.468533', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:34:28.468533', '2020-02-06 18:34:28.468533', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:34:28.474395', '2020-02-06 18:34:28.474395', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:34:28.474395', '2020-02-06 18:34:28.474395', 298486374)[0m
+  [1m[35m (97.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:34:28 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.7ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:34:42.304024', '2020-02-06 18:34:42.304024', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:34:42.304024', '2020-02-06 18:34:42.304024', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:34:42.311291', '2020-02-06 18:34:42.311291', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:34:42.311291', '2020-02-06 18:34:42.311291', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:34:42.316645', '2020-02-06 18:34:42.316645', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:34:42.316645', '2020-02-06 18:34:42.316645', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:34:42.322111', '2020-02-06 18:34:42.322111', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:34:42.322111', '2020-02-06 18:34:42.322111', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:34:42.328821', '2020-02-06 18:34:42.328821', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:34:42.328821', '2020-02-06 18:34:42.328821', 298486374)[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:34:42 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.7ms)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:35:55.068246', '2020-02-06 18:35:55.068246', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:35:55.068246', '2020-02-06 18:35:55.068246', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:35:55.075208', '2020-02-06 18:35:55.075208', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:35:55.075208', '2020-02-06 18:35:55.075208', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:35:55.080749', '2020-02-06 18:35:55.080749', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:35:55.080749', '2020-02-06 18:35:55.080749', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:35:55.086524', '2020-02-06 18:35:55.086524', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:35:55.086524', '2020-02-06 18:35:55.086524', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:35:55.092764', '2020-02-06 18:35:55.092764', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:35:55.092764', '2020-02-06 18:35:55.092764', 298486374)[0m
+  [1m[35m (908.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:35:56 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.8ms)
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "books_words" DISABLE TRIGGER ALL;ALTER TABLE "learn_notes" DISABLE TRIGGER ALL;ALTER TABLE "notebooks" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "notebooks"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:36:34.779161', '2020-02-06 18:36:34.779161', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "notebooks" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:36:34.779161', '2020-02-06 18:36:34.779161', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('IELTS', '2020-02-06 18:36:34.786103', '2020-02-06 18:36:34.786103', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "created_at", "updated_at", "id") VALUES ('PTE', '2020-02-06 18:36:34.786103', '2020-02-06 18:36:34.786103', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "learn_notes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:36:34.791638', '2020-02-06 18:36:34.791638', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "learn_notes" ("status", "created_at", "updated_at", "id") VALUES (1, '2020-02-06 18:36:34.791638', '2020-02-06 18:36:34.791638', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:36:34.797304', '2020-02-06 18:36:34.797304', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "words" ("name_a", "name_b", "sounds_a", "sounds_b", "explanation", "example", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, 'MyString', 'MyText', 'MyText', '2020-02-06 18:36:34.797304', '2020-02-06 18:36:34.797304', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:36:34.803504', '2020-02-06 18:36:34.803504', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2020-02-06 18:36:34.803504', '2020-02-06 18:36:34.803504', 298486374)[0m
+  [1m[35m (182.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "books_words" ENABLE TRIGGER ALL;ALTER TABLE "learn_notes" ENABLE TRIGGER ALL;ALTER TABLE "notebooks" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+BooksControllerTest: test_index
+-------------------------------
+Started GET "/api/v1/books" for 127.0.0.1 at 2020-02-07 02:36:35 +0800
+Processing by BooksController#index as JSON
+  Rendering books/index.json.jbuilder
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.json.jbuilder (3.6ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
