@@ -2,7 +2,16 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
+module SignInHelper
+  def sign_in_as_default
+    # post login_url(user: { username: 'test1', password: 'Thisistest1' })
+    post login_url(user: { username: users(:one).username, password: users(:one).password })
+  end
+end
+
 class ActiveSupport::TestCase
+   include SignInHelper
+
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
