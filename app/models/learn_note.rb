@@ -1,4 +1,6 @@
 class LearnNote < ApplicationRecord
-  belons_to :user
-  belons_to :words
+  belongs_to :user
+  belongs_to :words
+
+  validates :status, :user_id, :word_id, presence: true
 end
