@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     login_params = params.require(:user).permit(:username, :password)
-    @user = User.find_by('lower(username) = lower(?)', login_params[:username])
+    @user = User.find_by('lower(username) = lower(?) AND password = ?', login_params[:username], login_params[:password])
 
-    if @user&.authenticate(login_params[:password])
+    if @user
       login_as @user
       remember_me
       redirect_to root_url 

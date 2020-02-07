@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: 
-  password: MyString
+  username: name1 
+  password: pwd12345
 
 two:
-  username: 
-  password: MyString
+  username: name2
+  password: pwd12345

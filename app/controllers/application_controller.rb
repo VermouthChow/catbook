@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   class AccessDenied < Exception; end
 
   def login_required
-    redirect_to login_path unless login?
+    raise ::AccessDenied unless login?
   end
 
   def current_user

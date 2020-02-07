@@ -1,17 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name_a: MyString
-  name_b: MyString
-  sounds_a: 
-  sounds_b: MyString
-  explanation: MyText
-  example: MyText
+words_one:
+  name_a: apple
+  name_b: ff
+  sounds_a: ap
+  sounds_b: ap
+  explanation: fruit
+  example: example sentence
 
-two:
-  name_a: MyString
-  name_b: MyString
-  sounds_a: 
-  sounds_b: MyString
-  explanation: MyText
-  example: MyText
+words_two:
+  name_a: cat
+  name_b: cat1
+  sounds_a: c
+  sounds_b: c
+  explanation: ccccat
+  example:
+
+words_three:
+  name_a: dog
+  name_b: ap
+  sounds_a: d
+  sounds_b: d
+  explanation: ddddd
+  example: 

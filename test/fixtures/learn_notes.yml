@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  status: 1
+learn_one:
+  status: 0
+  user: one
+  word: words_two
+  updated_at: 2019-11-11
 
-two:
-  status: 1
+learn_two:
+  status: 0
+  user: one
+  word: words_three
+  updated_at: 2020-02-02

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_one :notebook, dependent: :destroy
-  has_one :learn_book, dependent: :destroy
+  has_many :notebooks, dependent: :destroy
+  has_many :learn_notes, dependent: :destroy
 
   validates :username, uniqueness: { case_sensitive: false },
                        presence: true,

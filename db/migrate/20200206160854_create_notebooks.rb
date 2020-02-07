@@ -1,9 +1,9 @@
 class CreateNotebooks < ActiveRecord::Migration[5.1]
   def change
     create_table :notebooks do |t|
-      t.integer :status
-      t.integer :user_id
-      t.integer :word_id
+      t.integer :status,                     null: false
+      t.integer :user_id,                    null: false
+      t.integer :word_id,                    null: false
 
       t.timestamps
     end

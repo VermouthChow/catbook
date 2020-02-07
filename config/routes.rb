@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
     resources :books, only: :index
 
+    resources :words, only: [:index, :show]
 
+    resources :notebooks, only: [:index, :create, :destroy]
+
+    resources :learn_notes, only: :create
 
     root 'books#index' 
   end

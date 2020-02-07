@@ -2,6 +2,10 @@ require 'test_helper'
 
 class BooksControllerTest < ActionDispatch::IntegrationTest
 
+  def setup
+    combine_bookone_and_3words
+  end
+
   def test_index
     get '/api/v1/books'
 

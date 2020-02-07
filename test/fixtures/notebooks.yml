@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  status: 1
+note_one:
+  status: 0
+  user: one
+  word: words_one
 
-two:
-  status: 1
+note_two:
+  status: 0
+  user: one
+  word: words_two
