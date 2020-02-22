@@ -1,5 +1,9 @@
 # README
 
+doc:
+
+https://docs.google.com/document/d/1jbtNE3_it8BWGVZGSnWoBwfQ83HgVtjyQvO51NJJPSo/edit?usp=sharing
+
 ## info
 
 * Ruby version:  2.6.4
